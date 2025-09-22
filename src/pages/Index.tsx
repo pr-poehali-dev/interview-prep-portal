@@ -9,74 +9,76 @@ const Index = () => {
 
   const modules = [
     {
-      id: 'it-basics',
-      title: 'Общая информация об IT',
-      description: 'SDLC, Agile, роли в команде, цикл жизни требований',
-      icon: 'Code',
-      level: 'Базовый',
-      duration: '2 часа',
-      topics: ['SDLC', 'Agile & Waterfall', 'DevOps', 'Роли в команде']
+      id: 'competency-matrix',
+      title: 'Матрица компетенций',
+      description: 'Оценка текущего уровня и план развития аналитика',
+      icon: 'Grid3x3',
+      level: 'Самооценка',
+      duration: 'Постоянно',
+      topics: ['Junior → Middle', 'Middle → Senior', 'Lead-навыки', 'Планы развития']
     },
     {
-      id: 'requirements',
+      id: 'requirements-practice',
       title: 'Работа с требованиями',
-      description: 'Виды требований, методы сбора, UML, BPMN, User Stories',
+      description: 'Практические навыки для реальных проектов компании',
       icon: 'FileText',
-      level: 'Средний',
-      duration: '4 часа',
-      topics: ['Виды требований', 'UML диаграммы', 'User Stories', 'Use Cases']
+      level: 'Применение',
+      duration: 'По задачам',
+      topics: ['Шаблоны документов', 'Чек-листы', 'Реальные кейсы', 'Лучшие практики']
     },
     {
-      id: 'databases',
-      title: 'Базы данных',
-      description: 'SQL основы, проектирование БД, ER-диаграммы',
-      icon: 'Database',
-      level: 'Средний',
-      duration: '3 часа',
-      topics: ['SQL запросы', 'Проектирование БД', 'Нормализация', 'ER-диаграммы']
+      id: 'analysis-toolkit',
+      title: 'Инструменты аналитика',
+      description: 'Корпоративные стандарты и инструменты',
+      icon: 'Wrench',
+      level: 'Инструменты',
+      duration: 'Справочник',
+      topics: ['Confluence', 'Jira', 'Figma', 'Draw.io', 'SQL инструменты']
     },
     {
-      id: 'architecture',
-      title: 'Архитектура',
-      description: 'Монолит vs микросервисы, паттерны интеграции',
-      icon: 'Building',
-      level: 'Продвинутый',
-      duration: '3 часа',
-      topics: ['Архитектурные паттерны', 'Микросервисы', 'API Design', 'Интеграции']
+      id: 'project-cases',
+      title: 'Проектные кейсы',
+      description: 'Разбор реальных задач и решений в компании',
+      icon: 'Briefcase',
+      level: 'Кейсы',
+      duration: 'Библиотека',
+      topics: ['Успешные проекты', 'Уроки провалов', 'Типовые решения', 'Метрики']
     },
     {
-      id: 'integrations',
-      title: 'Интеграции',
-      description: 'REST, SOAP, gRPC, асинхронные интеграции',
-      icon: 'Zap',
-      level: 'Продвинутый',
-      duration: '2.5 часа',
-      topics: ['REST API', 'SOAP', 'Очереди сообщений', 'Брокеры']
+      id: 'process-guide',
+      title: 'Процессы и стандарты',
+      description: 'Внутренние регламенты и методологии',
+      icon: 'Settings',
+      level: 'Процессы',
+      duration: 'Регламенты',
+      topics: ['SCRUM в компании', 'Code Review', 'Документооборот', 'Эскалация']
     },
     {
-      id: 'interview-prep',
-      title: 'Подготовка к интервью',
-      description: 'Типовые вопросы, симуляция собеседования',
-      icon: 'Users',
-      level: 'Практика',
-      duration: '2 часа',
-      topics: ['Вопросы для Middle', 'Вопросы для Senior', 'Советы', 'Симуляция']
+      id: 'self-check',
+      title: 'Самопроверка',
+      description: 'Чек-листы и тесты для проверки готовности',
+      icon: 'CheckSquare',
+      level: 'Контроль',
+      duration: 'Перед задачей',
+      topics: ['Готовность к проекту', 'Качество результата', 'Soft skills', 'Hard skills']
     }
   ];
 
   const stats = [
-    { label: 'Модулей обучения', value: '6+', icon: 'BookOpen' },
-    { label: 'Практических кейсов', value: '50+', icon: 'Target' },
-    { label: 'Вопросов для собеседования', value: '200+', icon: 'MessageCircle' },
-    { label: 'Часов контента', value: '16+', icon: 'Clock' }
+    { label: 'Компетенций в матрице', value: '45+', icon: 'Grid3x3' },
+    { label: 'Проектных кейсов', value: '30+', icon: 'Briefcase' },
+    { label: 'Практических чек-листов', value: '25+', icon: 'CheckSquare' },
+    { label: 'Сотрудников прошли обучение', value: '120+', icon: 'Users' }
   ];
 
   const getLevelColor = (level: string) => {
     switch (level) {
-      case 'Базовый': return 'bg-green-100 text-green-800';
-      case 'Средний': return 'bg-blue-100 text-blue-800';
-      case 'Продвинутый': return 'bg-purple-100 text-purple-800';
-      case 'Практика': return 'bg-orange-100 text-orange-800';
+      case 'Самооценка': return 'bg-blue-100 text-blue-800';
+      case 'Применение': return 'bg-green-100 text-green-800';
+      case 'Инструменты': return 'bg-purple-100 text-purple-800';
+      case 'Кейсы': return 'bg-orange-100 text-orange-800';
+      case 'Процессы': return 'bg-slate-100 text-slate-800';
+      case 'Контроль': return 'bg-red-100 text-red-800';
       default: return 'bg-gray-100 text-gray-800';
     }
   };
@@ -88,14 +90,14 @@ const Index = () => {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <Icon name="GraduationCap" size={32} className="text-primary" />
-              <span className="text-2xl font-bold text-slate-800">IT Analyst Prep</span>
+              <Icon name="TrendingUp" size={32} className="text-primary" />
+              <span className="text-2xl font-bold text-slate-800">АИСА Траектория</span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#modules" className="text-slate-600 hover:text-primary transition-colors">Модули</a>
-              <a href="#about" className="text-slate-600 hover:text-primary transition-colors">О курсе</a>
-              <a href="#pricing" className="text-slate-600 hover:text-primary transition-colors">Цены</a>
-              <Button variant="outline" size="sm">Войти</Button>
+              <a href="#modules" className="text-slate-600 hover:text-primary transition-colors">Траектории</a>
+              <a href="#matrix" className="text-slate-600 hover:text-primary transition-colors">Матрица</a>
+              <a href="#progress" className="text-slate-600 hover:text-primary transition-colors">Мой прогресс</a>
+              <Button variant="outline" size="sm">Профиль</Button>
             </div>
           </div>
         </div>
@@ -106,24 +108,24 @@ const Index = () => {
         <div className="container mx-auto text-center max-w-4xl">
           <div className="animate-fade-in">
             <Badge className="mb-6 bg-primary/10 text-primary border-primary/20">
-              Для Middle / Middle+ / Senior аналитиков
+              Платформа развития аналитиков компании
             </Badge>
             <h1 className="text-5xl md:text-6xl font-bold text-slate-800 mb-6 leading-tight">
-              Подготовка к собеседованию 
-              <span className="text-primary block">IT-аналитика</span>
+              Прокачай свои навыки 
+              <span className="text-primary block">системного аналитика</span>
             </h1>
             <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-              Структурированные знания, практические кейсы и симуляция собеседований 
-              для успешного трудоустройства в IT-компанию
+              Матрица компетенций, практические кейсы и чек-листы 
+              для применения в реальных проектах компании
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-lg px-8 py-6">
-                <Icon name="Play" size={20} className="mr-2" />
-                Начать подготовку
+                <Icon name="Grid3x3" size={20} className="mr-2" />
+                Оценить компетенции
               </Button>
               <Button variant="outline" size="lg" className="text-lg px-8 py-6">
-                <Icon name="FileText" size={20} className="mr-2" />
-                Программа курса
+                <Icon name="CheckSquare" size={20} className="mr-2" />
+                Чек-листы
               </Button>
             </div>
           </div>
@@ -151,9 +153,9 @@ const Index = () => {
       <section id="modules" className="py-20 px-6">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">Модули обучения</h2>
+            <h2 className="text-4xl font-bold text-slate-800 mb-4">Траектории развития</h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Пошаговая подготовка от основ IT до сложных архитектурных решений
+              Структурированный подход к развитию навыков для работы в реальных проектах
             </p>
           </div>
           
@@ -193,7 +195,7 @@ const Index = () => {
                     ))}
                   </div>
                   <Button className="w-full group-hover:bg-primary group-hover:text-white transition-colors">
-                    Начать модуль
+                    Перейти к разделу
                     <Icon name="ArrowRight" size={16} className="ml-2" />
                   </Button>
                 </CardContent>
@@ -206,18 +208,18 @@ const Index = () => {
       {/* CTA Section */}
       <section className="py-20 px-6 bg-gradient-to-r from-primary to-blue-600 text-white">
         <div className="container mx-auto text-center max-w-3xl">
-          <h2 className="text-4xl font-bold mb-6">Готов к следующему шагу в карьере?</h2>
+          <h2 className="text-4xl font-bold mb-6">Начни развитие уже сегодня</h2>
           <p className="text-xl mb-8 opacity-90">
-            Присоединяйся к сотням аналитиков, которые успешно прошли собеседования в топовые IT-компании
+            Более 120 сотрудников уже используют платформу для развития аналитических навыков
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="text-lg px-8 py-6">
-              <Icon name="Rocket" size={20} className="mr-2" />
-              Начать бесплатно
+              <Icon name="Grid3x3" size={20} className="mr-2" />
+              Пройти оценку
             </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-primary">
-              <Icon name="MessageCircle" size={20} className="mr-2" />
-              Связаться с нами
+              <Icon name="Users" size={20} className="mr-2" />
+              Связаться с HR
             </Button>
           </div>
         </div>
@@ -229,34 +231,34 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
               <div className="flex items-center space-x-2 mb-4">
-                <Icon name="GraduationCap" size={24} className="text-primary" />
-                <span className="text-xl font-bold">IT Analyst Prep</span>
+                <Icon name="TrendingUp" size={24} className="text-primary" />
+                <span className="text-xl font-bold">АИСА Траектория</span>
               </div>
               <p className="text-slate-400 max-w-md">
-                Профессиональная подготовка к собеседованиям для системных и бизнес-аналитиков
+                Корпоративная платформа развития навыков системных и бизнес-аналитиков
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Модули</h4>
+              <h4 className="font-semibold mb-4">Разделы</h4>
               <ul className="space-y-2 text-slate-400">
-                <li><a href="#" className="hover:text-white transition-colors">Основы IT</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Требования</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Базы данных</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Архитектура</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Матрица компетенций</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Практические кейсы</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Чек-листы</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Инструменты</a></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Поддержка</h4>
               <ul className="space-y-2 text-slate-400">
-                <li><a href="#" className="hover:text-white transition-colors">Документация</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Справка</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">FAQ</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Контакты</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Отзывы</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">HR отдел</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Обратная связь</a></li>
               </ul>
             </div>
           </div>
           <div className="border-t border-slate-800 mt-12 pt-8 text-center text-slate-400">
-            <p>&copy; 2024 IT Analyst Prep. Все права защищены.</p>
+            <p>&copy; 2024 АИСА Траектория. Внутренняя корпоративная платформа.</p>
           </div>
         </div>
       </footer>
