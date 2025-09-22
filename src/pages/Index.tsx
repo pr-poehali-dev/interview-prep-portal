@@ -119,7 +119,7 @@ const Index = () => {
               для применения в реальных проектах компании
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8 py-6">
+              <Button size="lg" className="text-lg px-8 py-6" onClick={() => window.location.href = '/assessment'}>
                 <Icon name="Grid3x3" size={20} className="mr-2" />
                 Оценить компетенции
               </Button>
